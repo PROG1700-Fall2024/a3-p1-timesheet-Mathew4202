@@ -5,18 +5,17 @@
 
 #Student #:     w0461513
 #Student Name:  Chukwuemeka Mathew Akunyili
-def getHoursWorked():
+def getHoursWorked():  #defined this function to be able to call it, to store my list
     hours = []
     hoursWorked = ""
 
-    for i in range (5):
+    for i in range (5):  #this makes the user enter the hours worked for 5 days using the help of the for loop
         hoursWorked = float(input(f"Enter hours worked on day #{i+1}: "))
-        hours.append(hoursWorked)
+        hours.append(hoursWorked) #appends what the user enters into the hours list
     return hours
 
 def maxHours(hours):
     max_hours = max(hours)
-     # I didnt know how to print the 2 highest numbers in the list, so this code is from chat gpt, and was modified by me
     max_days = [i + 1 for i, h in enumerate(hours) if h == max_hours]
     
     if len(max_days) == 1:
@@ -29,7 +28,7 @@ def totalHours(hours):
      print("The total number of hours worked was:",sum(hours))
 
 def average(hours):
-    average = (sum(hours)) / len(hours)
+    average = (sum(hours)) / len(hours) #this fomula gets the average of the days worked
     print("The average number of hours worked each day was:", average)
 def slackedDays(hours):
     print("Days you slacked off (i.e. worked less than 7 hours):")
@@ -38,6 +37,7 @@ def slackedDays(hours):
             print(f"Day #{i + 1}: {hours[i]} hours")
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
+    #call back all the functions to run the code
     hours = getHoursWorked()
     maxHours(hours)
     totalHours(hours)
